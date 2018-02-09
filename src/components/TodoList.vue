@@ -9,6 +9,7 @@
 </template>
 
 <script type = "text/javascript" >
+import sweetalert from 'sweetalert';
 import Todo from './Todo';
 
 export default {
@@ -20,10 +21,12 @@ export default {
     deleteTodo(todo) {
       const todoIndex = this.todos.indexOf(todo);
       this.todos.splice(todoIndex, 1);
+      sweetalert('Deleted!', 'Your To-Do has been deleted.', 'success');
     },
     completeTodo(todo) {
       const todoIndex = this.todos.indexOf(todo);
       this.todos[todoIndex].done = true;
+      sweetalert('Success!', 'To-Do completed!', 'success');
     },
   },
 };
