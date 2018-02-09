@@ -8,7 +8,7 @@
         {{ todo.project }}
       </div>
       <div class="extra content">
-          <span class="right floated edit icon">
+          <span class="right floated edit icon" v-on:click="showForm">
             <i class="edit icon"></i>
           </span>
       </div>
@@ -31,7 +31,7 @@
         </div>
       </div>
     </div>
-    <div class="ui bottom attached green basic button" v-show="!isEditing && todo.done">
+    <div class="ui bottom attached green basic button" v-show="!isEditing && todo.done" disabled>
       Completed
     </div>
     <div class="ui bottom attached red basic button" v-show="!isEditing && !todo.done">
